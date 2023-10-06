@@ -10,3 +10,4 @@ sqlparse==0.4.3
 termcolor==2.1.0
 waitress==2.1.2
 Werkzeug==2.2.2
+Pillow==9.2.0
