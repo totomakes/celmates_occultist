@@ -3,9 +3,11 @@
 <head>
     <title>The Occultist</title>
     <style>
+
+
         @font-face {
-            font-family: McbessCelmates-Regular;
-            src: url("/static/font/McbessCelmates-Regular.otf") format("opentype");
+        font-family: McbessCelmates-Regular;
+        src: url("/static/font/McbessCelmates-Regular.otf") format("opentype");
         }
 
         body {
@@ -75,18 +77,6 @@
             display: none; /* Initially hidden */
         }
 
-        #overlayOptions {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            height: 200px;
-        }
-
-        .overlayOption {
-            margin: 10px;
-            cursor: pointer;
-        }
-
         #downloadButton {
             display: flex;
             flex-direction: row;
@@ -100,10 +90,8 @@
             display: none;
         }
 
-        h1   {
-            color: #d6cfc5;
-            font-family: McbessCelmates-Regular;
-        }
+        h1   {color: #d6cfc5;
+        font-family: McbessCelmates-Regular;}
         
         #droptext {
             color: #d6cfc5;
@@ -113,7 +101,7 @@
         #buttonmate {
             color: #000;
             width: 250px;
-            height: 75px;
+            height: 50px;
             border-radius: 5px;
             background-color: #d6cfc5;
             font-family: McbessCelmates-Regular;
@@ -124,14 +112,6 @@
             cursor: pointer;
         }
 
-        #op1{
-            width: 150px;
-            transition: 250ms;
-        }
-        #op1:hover{
-            transition: 250ms;
-            width: 175px;
-        }
     </style>
 </head>
 <body>
@@ -143,11 +123,6 @@
         <input type="file" id="fileInput">
         <img id="previewImg" src="" alt="">
         <img id="overlayImg" src="" alt="Overlay" draggable="false">
-    </div>
-    <div id="overlayOptions">
-        <div class="overlayOption" id="option1" onclick="selectOverlay(1)"><img id="op1" src="/static/overlays/overlay1.png"></div>
-        <div class="overlayOption" id="option2" onclick="selectOverlay(2)"><img id="op1" src="/static/overlays/overlay2.png"></div>
-        <div class="overlayOption" id="option3" onclick="selectOverlay(3)"><img id="op1" src="/static/overlays/overlay3.png"></div>
     </div>
     <br>
     <div id="download-area">
@@ -166,31 +141,6 @@
         const previewImg = document.getElementById('previewImg');
         const overlayImg = document.getElementById('overlayImg');
         const downloadLink = document.getElementById('downloadLink');
-        const overlayOptions = document.querySelectorAll('.overlayOption');
-
-        function selectOverlay(option) {
-            // Hide all overlay options
-            overlayOptions.forEach((elem) => {
-                elem.classList.remove('selected');
-            });
-
-            // Apply the selected overlay
-            switch (option) {
-                case 1:
-                    overlayImg.src = '/static/overlays/overlay1.png';
-                    break;
-                case 2:
-                    overlayImg.src = '/static/overlays/overlay2.png';
-                    break;
-                case 3:
-                    overlayImg.src = '/static/overlays/overlay3.png';
-                    break;
-                default:
-                    overlayImg.src = ''; // No overlay
-            }
-
-            overlayOptions[option - 1].classList.add('selected');
-        }
 
         dropArea.addEventListener('dragover', (e) => {
             e.preventDefault();
@@ -241,8 +191,7 @@
                 downloadButton.style.display = 'block';
                 resultDiv.style.display = 'none';
 
-                // Automatically apply the first overlay option
-                selectOverlay(1);
+                overlayImg.src = '/static/overlays/overlay.png';
             };
             reader.readAsDataURL(file);
         }
