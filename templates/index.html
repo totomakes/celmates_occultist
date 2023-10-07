@@ -271,8 +271,12 @@
 
         if (/Mobi/.test(navigator.userAgent)) {
             document.getElementById('droptext').textContent = 'Tap or Drop your mate here.';
-        }
 
+            // Add an event listener to open the file picker when tapping the drag area
+            document.getElementById('drop-area').addEventListener('click', function () {
+                document.getElementById('fileInput').click();
+            });
+        }
 
     </script>
 </body>
