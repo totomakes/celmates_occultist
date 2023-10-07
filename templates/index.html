@@ -79,11 +79,12 @@
             display: flex;
             justify-content: center;
             margin-top: 20px;
-            height: 200px;
+            margin-bottom: 20px;
+            height: 100px;
         }
 
         .overlayOption {
-            margin: 10px;
+            margin: 0px;
             cursor: pointer;
         }
 
@@ -125,12 +126,16 @@
         }
 
         #op1{
-            width: 150px;
+            width: 125px;
             transition: 250ms;
+
         }
         #op1:hover{
+            cursor: pointer;
             transition: 250ms;
-            width: 175px;
+            width: 140px;
+            -webkit-filter: drop-shadow(0px 12px 7px rgba(214, 207, 197, 0.5));
+            filter: drop-shadow(0px 12px 7px rgba(214, 207, 197, 0.5));
         }
     </style>
 </head>
@@ -148,7 +153,11 @@
         <div class="overlayOption" id="option1" onclick="selectOverlay(1)"><img id="op1" src="/static/overlays/overlay1.png"></div>
         <div class="overlayOption" id="option2" onclick="selectOverlay(2)"><img id="op1" src="/static/overlays/overlay2.png"></div>
         <div class="overlayOption" id="option3" onclick="selectOverlay(3)"><img id="op1" src="/static/overlays/overlay3.png"></div>
+        <div class="overlayOption" id="option4" onclick="selectOverlay(4)"><img id="op1" src="/static/overlays/overlay4.png"></div>
+        <div class="overlayOption" id="option5" onclick="selectOverlay(5)"><img id="op1" src="/static/overlays/overlay5.png"></div>
+        <div class="overlayOption" id="option6" onclick="selectOverlay(6)"><img id="op1" src="/static/overlays/overlay6.png"></div>
     </div>
+
     <br>
     <div id="download-area">
         <a id="downloadButton" download="MaskedMate.png"><button id="buttonmate">DOWNLOAD OR JUST SCREENSHOT HMMM I DON'T CARE</button></a>
@@ -184,6 +193,15 @@
                     break;
                 case 3:
                     overlayImg.src = '/static/overlays/overlay3.png';
+                    break;
+                case 4:
+                    overlayImg.src = '/static/overlays/overlay4.png';
+                    break;
+                case 5:
+                    overlayImg.src = '/static/overlays/overlay5.png';
+                    break;
+                case 6:
+                    overlayImg.src = '/static/overlays/overlay6.png';
                     break;
                 default:
                     overlayImg.src = ''; // No overlay
